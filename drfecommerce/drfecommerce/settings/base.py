@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     # Installed Apps by Edmon:
 
     # External Packages
-    'rest_framework'
+    "rest_framework",
     # Internal Apps
+    "drfecommerce.product",
 ]
 
 MIDDLEWARE = [
