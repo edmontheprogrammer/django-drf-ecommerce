@@ -23,11 +23,23 @@ class CategoryViewSet(viewsets.ViewSet):
 
 class BrandViewSet(viewsets.ViewSet):
     """
-        A simple Viewset for viewing all categories 
+        A simple Viewset for viewing all Brands 
     """
     queryset = Brand.objects.all()
 
     @extend_schema(responses=BrandSerializer)
     def list(self, request):
         serializer = BrandSerializer(self.queryset, many=True)
+        return Response(serializer.data)
+
+
+class ProductViewSet(viewsets.ViewSet):
+    """
+        A simple Viewset for viewing all Products 
+    """
+    queryset = Product.objects.all()
+
+    @extend_schema(responses=ProductSerializer)
+    def list(self, request):
+        serializer = ProductSerializer(self.queryset, many=True)
         return Response(serializer.data)
